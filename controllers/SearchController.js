@@ -2,7 +2,7 @@ import { Op } from "sequelize";
 import Transaksi from "../models/SearchModel.js";
 
 
-export const getDataSearch = async(req, res) =>{
+export const getDataSearchSortNama = async(req, res) =>{
     const page = parseInt(req.query.page) || 0;
     const limit = parseInt(req.query.limit) || 10;
     const search = req.query.search_query || "";
@@ -24,7 +24,40 @@ export const getDataSearch = async(req, res) =>{
         offset: offset,
         limit: limit,
         order:[
-            ['nama_barang', 'DESC']
+            ['nama_barang', 'ASC']
+        ]
+    });
+    res.json({
+        result: result,
+        page:page+1,
+        limit: limit,
+        totalRows: totalRows,
+        totalPage: totalPage
+    });
+}
+export const getDataSearchSortTanggal = async(req, res) =>{
+    const page = parseInt(req.query.page) || 0;
+    const limit = parseInt(req.query.limit) || 10;
+    const search = req.query.search_query || "";
+    const offset = limit * page;
+    const totalRows = await Transaksi.count({
+        where:{
+            [Op.or]: [{nama_barang:{
+                [Op.like]:'%'+search+'%'
+            }}]
+        }
+    }); 
+    const totalPage = Math.ceil(totalRows / limit);
+    const result = await Transaksi.findAll({
+        where: {
+            [Op.or]: [{nama_barang:{
+                [Op.like]:'%'+search+'%'
+            }}]
+        },
+        offset: offset,
+        limit: limit,
+        order:[
+            ['tanggal_transaksi', 'ASC']
         ]
     });
     res.json({

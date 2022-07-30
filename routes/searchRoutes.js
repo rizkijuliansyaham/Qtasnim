@@ -1,8 +1,9 @@
 import express, { Router } from "express";
-import { getDataSearch } from "../controllers/SearchController.js";
+import { getDataSearchSortNama, getDataSearchSortTanggal } from "../controllers/SearchController.js";
 
 const SearchRouter = express.Router();
 
-SearchRouter.get('/search', getDataSearch);
+SearchRouter.get('/search1', getDataSearchSortNama);
+SearchRouter.get('/search2', getDataSearchSortTanggal);
 
 export default SearchRouter;
