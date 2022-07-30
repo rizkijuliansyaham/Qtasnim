@@ -45,7 +45,7 @@ export const createDataTransaksi = async (req, res) => {
     try {
         await TransaksiData.create(req.body);
         res.json({
-            "message" : "Jenis dibuat"
+            "message" : "Transaksi dibuat"
         });
     } catch (error) {
         console.log(error);
@@ -60,7 +60,7 @@ export const deleteTransaksi = async (req, res) => {
             }
         });
         res.json({
-            message: "Jenis dihapus"
+            message: "Transaksi dihapus"
         });
     } catch (error) {
         

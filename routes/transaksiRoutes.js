@@ -2,7 +2,10 @@ import express from "express";
 
 import {
     deleteTransaksi,
-    getDataTransaksi, getTransaksiById, createDataTransaksi, updateDataTransaksi,
+    getDataTransaksi, 
+    getTransaksiById, 
+    createDataTransaksi, 
+    updateDataTransaksi,
 } from "../controllers/TransaksiData.js";
 
 const TransaksiRouter = express.Router();

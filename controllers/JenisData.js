@@ -54,7 +54,7 @@ export const createDataJenis = async (req, res) => {
 
 export const deleteJenis = async (req, res) => {
     try {
-        await BarangData.destroy({
+        await JenisData.destroy({
             where: {
                 id_jenis: req.params.id_jenis,
             }

@@ -10,6 +10,7 @@ const TransaksiData = db.define("Transaksi", {
     },
     nama_barang: {
         type: DataTypes.STRING,
+        references:true,
     },
     jumlah_terjual: {
         type: DataTypes.INTEGER,
