@@ -32,7 +32,7 @@ export const getJenisById = async (req, res) => {
     try {
         const datas = await JenisData.findAll({
             where: {
-                id_jenis: req.params.id,
+                id_jenis: req.params.id_jenis,
             },
         });
         res.send(datas[0]);
@@ -56,7 +56,7 @@ export const deleteJenis = async (req, res) => {
     try {
         await BarangData.destroy({
             where: {
-                id_jenis: req.params.id
+                id_jenis: req.params.id_jenis,
             }
         });
         res.json({
