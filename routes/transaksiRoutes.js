@@ -6,5 +6,6 @@ import {
 
 const TransaksiRouter = express.Router();
 TransaksiRouter.get("/", getDataTransaksi);
+// TransaksiRouter.post("/:id_transaksi", update)
 
 export default TransaksiRouter;

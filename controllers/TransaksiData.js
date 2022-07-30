@@ -1,13 +1,5 @@
 import TransaksiData from "../models/TransaksiModel.js"
 
-// export const getDataTransaksi = async (req, res) => {
-//     try {
-//         const transaksi = await Transaksi.findAll();
-//         res.json(transaksi);
-//     } catch (error) {
-//         res.json({message: error.message});
-//     }
-// }
 
 export const getDataTransaksi = async (req,res) => {
     try {
@@ -17,3 +9,4 @@ export const getDataTransaksi = async (req,res) => {
         res.json({message: error.message});
     }
 }
+

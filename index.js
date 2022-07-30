@@ -1,6 +1,7 @@
 import db from "./config/database.js";
 import express from "express";
 import TransaksiRouter from "./routes/transaksiRoutes.js";
+import BarangRouter from "./routes/barangRoutes.js";
 
 const app = express();
 
@@ -13,6 +14,7 @@ try {
 
 app.use(express.json());
 app.use("/Transaksi", TransaksiRouter);
+app.use("/Barang", BarangRouter);
 // app.use("/", (req, res)=>{
 //   res.send('berhasil');
 // });
