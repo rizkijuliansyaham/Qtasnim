@@ -13,6 +13,10 @@ const Transaksi = db.define("Transaksi", {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    id_jenis: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
     jumlah_terjual: {
         type: DataTypes.INTEGER,
         allowNull: false,
